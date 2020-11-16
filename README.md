@@ -11,7 +11,6 @@ created.
 1) If the severity of the is 1, add it to a queue (FIFO) in the order in which they arrive. 
 2) If the severity is 2, addit to the binary tree. Implement the binary tree using linked list. Add the item in the tree sorted by the
 time they arrive (date/time). 
-▪ To insert or print items in the binary tree, use recursion. 
-▪ You should also provide methods to print items in the stack and queue.
-▪ When a case is marked as “closed” stored them in a stack and remove the item from the binary tree or
-queue.
+3) To insert or print items in the binary tree, use recursion. 
+4) You should also provide methods to print items in the stack and queue.
+5) When a case is marked as “closed” stored them in a stack and remove the item from the binary tree or queue.
