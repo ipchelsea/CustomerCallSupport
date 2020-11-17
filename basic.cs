@@ -110,9 +110,6 @@ namespace MajorAssignment3
 
                 return node;
 
-              
-                
-
             }
 
             void casecreated(int a, int b, DateTime created, Boolean set)
@@ -200,13 +197,42 @@ namespace MajorAssignment3
                 }
             }
 
+            void casecreatedinqueue(int a, int b, DateTime created, Boolean set)
+            {
+                int ClientID = a;
+                int Severity = b;
+                DateTime create = created;
+                Boolean closed = set;
+
+                Console.WriteLine("Client ID: ");
+                Console.WriteLine("Severity: " + Severity);
+                Console.WriteLine("Created: " + create);
+                Console.WriteLine("Closed: " + closed);
+                Console.WriteLine();
+            }
+
+            static void printStack(Stack s, int b, DateTime created, Boolean set)
+            {
+                int Severity = b;
+                DateTime create = created;
+                Boolean closed = set;
+
+                foreach (Object obj in s)
+                {
+                    Console.WriteLine("Client ID: " + obj + " ");
+                    Console.WriteLine("Severity: " + Severity + " ");
+                    Console.WriteLine("Created: " + create + " ");
+                    Console.WriteLine("Closed: " + closed + " ");
+                }
+                Console.WriteLine();
+            }
+
+
             static void Main(string[] args)
             {
-               
 
-                static  void printSorted(int[] arr,
-                                int start,
-                                int end)
+
+                static void printSorted(int[] arr, int start,int end)
                 {
                     if (start > end)
                         return;
@@ -221,21 +247,28 @@ namespace MajorAssignment3
                     printSorted(arr, start * 2 + 2, end);
                 }
 
+                DateTime date1 = new DateTime(2020, 7, 1, 10, 32, 52);
 
                 DateTime date2 = new DateTime(2020, 6, 1, 7, 50, 0);
-             //   casecreated(200, 2, date2, false);
+                //   casecreated(200, 2, date2, false);
                 DateTime date3 = new DateTime(2020, 5, 1, 8, 32, 52);
-            //    casecreated(100, 2, date3, false);
+                //    casecreated(100, 2, date3, false);
                 DateTime date4 = new DateTime(2020, 7, 1, 9, 47, 23);
-             //   casecreated(400, 2, date4, false);
+                //   casecreated(400, 2, date4, false);
+                DateTime date5 = new DateTime(2020, 10, 1, 1, 35, 52);
 
-
+                //Queue queue = new Queue(); //to store severity cases 1
+                Queue my_queue = new Queue();
+              
+                //my_queue.casecreated(300, 1, date1, true);
+                //my_queue.Enqueue(500);
                 
+                // "Pop" items from the queue in FIFO order
 
+                //my_stack.casecreated(my_stack.Peek, 1, date1, true);
+                //my_queue.casecreated(my_queue.Dequeue(), 2, date5, true);
 
-                Queue Severity1 = new Queue();
-               
-                BinaryTree tree = new BinaryTree();
+                BinaryTree tree = new BinaryTree(); //to store severity cases 2
 
                 /* Last node of Linked List */
                 tree.push(100);
@@ -246,15 +279,19 @@ namespace MajorAssignment3
                 tree.casecreated(400, 2, date4, false);
 
                 /* First node of Linked List */
-                
+
                 BinaryTreeNode node = tree.convertList2Binary(tree.root);
 
-                Console.WriteLine("Inorder Traversal of the" +
-                                " constructed Binary Tree is:");
-                tree.inorderTraversal(node);
+                //Console.WriteLine("Inorder Traversal of the" +
+                                //" constructed Binary Tree is:");
+                //tree.inorderTraversal(node);
                 /* Last node of Linked List */
 
-                
+                Stack my_stack = new Stack();
+
+                my_stack.Push(300);
+                //Console.WriteLine("Stack elements are...");
+                printStack(my_stack, 2, date1, true);
 
                 // Print inoder traversal of the BS
                 Console.ReadKey();
@@ -262,3 +299,23 @@ namespace MajorAssignment3
         }
     }
 }
+
+/*
+using System;
+
+namespace classes
+{
+    public class CustomerRecord
+    {
+        public int ClientID { get; }
+        public string Owner { get; set; }
+        public Boolean IssueClosed { get; }
+        public int Severity { get;  }
+
+        public DateTime Date { get; }
+
+        public void MakeDeposit(int amount, DateTime date, string note)
+        {
+        }
+    }
+}*/
